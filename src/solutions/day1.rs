@@ -14,11 +14,10 @@ fn find_digits(s: &str) -> u32 {
     sum_first_last(digits)
 }
 
-
 pub fn solve_a() {
     println!(
         "{:?}",
-        read_lines("./src/data/day1.txt")
+        read_lines("day1.txt")
             .into_iter()
             .map(|s| find_digits(&s))
             .sum::<u32>()
@@ -31,7 +30,7 @@ pub fn solve_b() {
             "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
         ])
         .collect();
-    let result = read_lines("./src/data/day1.txt")
+    let result = read_lines("day1.txt")
         .into_iter()
         .map(|s| {
             let mut matches: Vec<u32> = vec![];
@@ -46,6 +45,7 @@ pub fn solve_b() {
             });
             matches
         })
-        .map(|matches| sum_first_last(matches.into_iter())).sum::<u32>();
+        .map(|matches| sum_first_last(matches.into_iter()))
+        .sum::<u32>();
     println!("{:?}", result)
 }
